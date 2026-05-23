@@ -35,8 +35,8 @@ test('Conciliation conciliate delegates to driver validate', function () {
 
     $request = new PaymentValidationRequest(
         reference: '12345678',
-        amount: '120.00',
-        date: '2023-02-12',
+        amount: 120.00,
+        date: new DateTimeImmutable('2023-02-12'),
     );
 
     $result = $handler->conciliate($request);
@@ -70,8 +70,8 @@ test('Conciliation conciliate returns whatever driver returns', function () {
 
     $request = new PaymentValidationRequest(
         reference: '99999999',
-        amount: '50.00',
-        date: '2024-06-01',
+        amount: 50.00,
+        date: new DateTimeImmutable('2024-06-01'),
     );
 
     $result = $handler->conciliate($request);
